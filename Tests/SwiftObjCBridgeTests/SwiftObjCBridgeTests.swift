@@ -9,30 +9,31 @@ final class SwiftObjCBridgeTests: XCTestCase {
   
     func testClassLookup() throws {
         let udc = ObjC.NSUserDefaults
-        XCTAssertNotNull(udc)
+        XCTAssertNotNil(udc.handle)
     }
     
     func testClassMethodLookup() throws {
         let call = ObjC.NSUserDefaults.alloc // <= No () yet!
         print("Callable:", call)
-        XCTAssertNotNull(call)
+        XCTAssertNotNil(call.instance.handle)
+        XCTAssertEqual(call.baseName, "alloc")
     }
     
     func testClassMethodInvocation() throws {
         let udNew = ObjC.NSUserDefaults.alloc() // <= Now with () !
         print("instance:", udNew)
-        XCTAssertNotNull(udNew)
+        XCTAssertNotNil(udNew.handle)
     }
     func testClassMethodInvocation2() throws {
         let ud = ObjC.NSUserDefaults.standardUserDefaults()
         print("instance:", ud)
-        XCTAssertNotNull(ud)
+        XCTAssertNotNil(ud.handle)
     }
     
     func testInstanceMethodInvocation() throws {
         let ud = ObjC.NSUserDefaults.standardUserDefaults()
         let domains = ud.volatileDomainNames()
-        XCTAssertNotNull(domains)
+        XCTAssertNotNil(domains.handle)
     }
     
     func testMethodWithArg() throws {      
