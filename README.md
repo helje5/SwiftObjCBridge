@@ -1,11 +1,7 @@
-# SwiftObjCBridge
+# Swift - Objective-C Bridge
 
 ![Swift5](https://img.shields.io/badge/swift-5-blue.svg)
 ![macOS](https://img.shields.io/badge/os-macOS-green.svg?style=flat)
-
-TODO
-
-## Sample tool
 
 TODO
 
@@ -17,9 +13,7 @@ prebuilt Swift 5 development toolchains over at:
 [swift.org](https://swift.org/download/#swift-50-development),
 and you can also use the 
 [Xcode 10.2beta](https://developer.apple.com/download/).
-Just install the toolchain, and select it in the Xcode "Toolchains" menu:
-
-![](/images/xcode-swift5/XcodeToolchainSelect.png)
+Just install the toolchain, and select it in the Xcode "Toolchains" menu.
 
 If you are living on the commandline, make sure to call 
 `export TOOLCHAINS=swift` to get access to the selected version.
