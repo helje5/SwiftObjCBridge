@@ -3,6 +3,9 @@
 ![Swift5](https://img.shields.io/badge/swift-5-blue.svg)
 ![macOS](https://img.shields.io/badge/os-macOS-green.svg?style=flat)
 
+Part of this blog post:
+[@dynamicCallable Part 2: Swift/ObjC Bridge](http://www.alwaysrightinstitute.com/swift-objc-bridge/).
+
 In December we demonstrated how to use the new Swift 5
 [Dynamic Callable](https://github.com/apple/swift-evolution/blob/master/proposals/0216-dynamic-callable.md)
 feature to 
