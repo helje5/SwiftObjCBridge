@@ -3,7 +3,44 @@
 ![Swift5](https://img.shields.io/badge/swift-5-blue.svg)
 ![macOS](https://img.shields.io/badge/os-macOS-green.svg?style=flat)
 
-TODO
+In December we demonstrated how to use the new Swift 5
+[Dynamic Callable](https://github.com/apple/swift-evolution/blob/master/proposals/0216-dynamic-callable.md)
+feature to 
+[run Unix commands as Swift functions](http://www.alwaysrightinstitute.com/swift-dynamic-callable/),
+like `shell.ls()`.
+Today we implement our very own Swift / Objective-C bridge using the same!
+
+Of course Swift already has Objective-C integrated on the Apple platforms,
+directly supported by the compiler, as well as the associated
+bridging runtime.
+<br>
+Yet using 
+[Dynamic Callable](https://github.com/apple/swift-evolution/blob/master/proposals/0216-dynamic-callable.md)
+you can actually build something similar at the library level,
+and we want to show you how that would look like.
+
+> Swift also runs on Linux, but it doesn't come with the
+> Objective-C runtime and bridging features.
+> Using the approach shown here with either
+> [libFoundation](https://github.com/AlwaysRightInstitute/libFoundation)
+> or
+> [GNUstep](http://gnustep.org)
+> you could also combine Swift and Objective-C on Linux.
+
+This is what we want to end up with:
+```swift
+let ma = ObjC.NSMutableArray()
+ma.addObject("Hello")
+  .addObject("World")
+print("Array:", ma.description())
+```
+
+**For demonstration purposes only**: 
+This is just a demo showing what you can do with 
+[@dynamicCallable](https://github.com/apple/swift-evolution/blob/master/proposals/0216-dynamic-callable.md),
+nothing more!
+(*we also cheat a few times and silently rely on builtin bridging.*)
+
 
 ## Install a Swift 5 Snapshot
 
